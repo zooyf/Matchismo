@@ -43,9 +43,9 @@
         if (card) {
             [sender setTitle:card.contents forState:UIControlStateNormal];
             [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"] forState:UIControlStateNormal];
+            self.flipCount++;
         }
     }
-    self.flipCount++;
 }
 
 - (Deck *)deck {

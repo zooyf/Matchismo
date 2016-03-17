@@ -26,12 +26,14 @@
 
 - (Card *)drawRandomCard {
     
-    unsigned index = arc4random() % self.cards.count;
-    
     Card *randomCard = nil;
+    
     if (self.cards.count) {
-        randomCard = self.cards[index];
-        [self.cards removeObject:randomCard];
+        unsigned index = arc4random() % self.cards.count;
+        if (self.cards.count) {
+            randomCard = self.cards[index];
+            [self.cards removeObject:randomCard];
+        }
     }
     
     return randomCard;
